@@ -1,0 +1,3 @@
+flutter_launcher_icons:
+  image_path: assets/logo.png
+  android: 'launcher_icon'

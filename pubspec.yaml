@@ -28,6 +28,7 @@ dependencies:
   backdrop: ^0.9.1
   sliding_up_panel: ^2.0.0+1
   get: ^4.6.6
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
