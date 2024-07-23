@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:geolocator/geolocator.dart';
@@ -50,17 +49,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   Future<List<BitmapDescriptor>> _manMarker() async {
-    final _man = await BitmapDescriptor.asset(
+    final man = await BitmapDescriptor.asset(
       ImageConfiguration.empty,
       "assets/man.png",
+      bitmapScaling: MapBitmapScaling.auto,
+      height: 64,
+      width: 64,
     );
 
-    final _woman = await BitmapDescriptor.asset(
+    final woman = await BitmapDescriptor.asset(
       ImageConfiguration.empty,
       "assets/woman.png",
+      bitmapScaling: MapBitmapScaling.auto,
+      height: 64,
+      width: 64,
     );
 
-    return [_man, _woman];
+    return [man, woman];
   }
 
   @override
@@ -83,7 +88,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           body: StreamBuilder(
             stream: Geolocator.getCurrentPosition().asStream(),
             builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
+              if (snapshot.data != null &&
+                  snapshot.connectionState == ConnectionState.done) {
                 final distance = Geolocator.distanceBetween(
                   tajMahal.latitude,
                   tajMahal.longitude,

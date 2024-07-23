@@ -1,4 +1,4 @@
-package com.adityatripathi.couple_hub
+package com.adityatripathi.us_hub
 
 import io.flutter.embedding.android.FlutterActivity
 
