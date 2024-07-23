@@ -6,7 +6,7 @@
 
     <application
         android:label="us_hub"
-        android:name="${applicationName}"
+        android:name="Us Hub"
         android:icon="@mipmap/ic_launcher"
         android:enableOnBackInvokedCallback="true"
     >
